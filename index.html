@@ -10,8 +10,16 @@
     
 </head>
 <body>
+  
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="Inicio.html"><img src="imagenes/rayoo.jpg" alt=""></a>
+        
+        <h2>Buscar</h2>
+        <form action="/buscar" method="GET">
+          <input type="text" name="q" placeholder="Buscar..." required>
+          <input type="submit" value="Buscar">
+        </form>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
