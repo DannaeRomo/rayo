@@ -13,42 +13,45 @@
   
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="Inicio.html"><img src="imagenes/rayoo.jpg" alt=""></a>
-        <div class="busqueda">
-          <style>
-            body {
+        <style>
+          body {
+              margin: 0;
+              padding: 0;
               font-family: Arial, sans-serif;
-              text-align: center; /* Centra el contenido del cuerpo */
-            }
-            .search-container {
-              margin-top: 50px; /* Espacio superior para separar del borde superior */
-            }
-            .search-container form {
-              display: inline-block; /* Permite que el formulario ocupe solo el espacio que necesita */
-            }
-            .search-container input[type="text"] {
-              padding: 10px;
-              width: 300px; /* Ancho de la barra de búsqueda */
-              border: 1px solid #ccc;
+          }
+          .search-container {
+              position: fixed;
+              top: 20px;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color: #ffffff;
               border-radius: 5px;
-            }
-            .search-container input[type="submit"] {
-              padding: 10px 20px;
-              background-color: #007bff;
-              color: white;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              display: flex;
+              align-items: center;
+              padding: 5px;
+          }
+          .search-container input[type="text"] {
               border: none;
+              outline: none;
+              padding: 5px;
+              border-radius: 5px;
+          }
+          .search-container button {
+              background-color: #007bff;
+              color: #ffffff;
+              border: none;
+              padding: 5px 10px;
               border-radius: 5px;
               cursor: pointer;
-            }
-            .search-container input[type="submit"]:hover {
-              background-color: #0056b3;
-            }
-          </style> 
-          <h2>Buscar</h2>
-          <form action="/buscar" method="GET">
-            <input type="text" name="q" placeholder="Buscar..." required>
-            <input type="submit" value="Buscar">
-          </form>
-        </div>
+          }
+      </style>
+      </head>
+      <body>
+      <div class="search-container">
+          <input type="text" placeholder="Buscar...">
+          <button type="submit">Buscar</button>
+      </div>
         
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
