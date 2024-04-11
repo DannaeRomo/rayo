@@ -6,7 +6,78 @@
     <title>Registro</title>
 </head>
 <body>
-    <h1>Agregar nuevas atenciones</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-container input[type="file"] {
+            margin-bottom: 10px;
+        }
+        .form-container button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="container">
+        <h1>Atenciones del Taller</h1>
+        <div class="form-container">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="imagen">Seleccionar Imagen:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*">
+                <button type="button" onclick="subirImagen()">Subir Imagen</button>
+            </form>
+        </div>
+        <div id="resultado"></div>
+    </div>
+    
+    <script>
+        function subirImagen() {
+            // Obtener el formulario y el elemento de imagen
+            const form = document.getElementById('uploadForm');
+            const imagenInput = document.getElementById('imagen');
+    
+            // Validar si se ha seleccionado una imagen
+            if (imagenInput.files.length === 0) {
+                alert('Por favor selecciona una imagen.');
+                return;
+            }
+    
+            // Simular la subida de la imagen (aquí puedes agregar lógica real para subirla)
+            const imagen = imagenInput.files[0];
+            const formData = new FormData();
+            formData.append('imagen', imagen);
+    
+            // Mostrar mensaje de éxito (simulado)
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = `
+                <p>Imagen subida con éxito:</p>
+                <img src="${URL.createObjectURL(imagen)}" alt="Imagen Subida">
+            `;
+        }
+    </script>
 
     
     
